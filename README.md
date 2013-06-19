@@ -19,4 +19,5 @@ Add the extension to haxelib:
 
 Usage:
 
-    see TestApp
+    cd TestApp
+    openfl test project.xml cpp
