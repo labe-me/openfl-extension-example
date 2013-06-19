@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta
+        title="TestExtensionTest"
+        package="me.labe.testapp"
+        version="1.0.0"
+        company="Laurent Bedubourg"
+        />
+	<app
+        main="Main"
+        path="Export"
+        file="TestApp"
+        />
+	<source path="." />
+	<haxelib name="openfl" />
+    <haxelib name="TestExtension" />
+</project>
