@@ -17,7 +17,7 @@ class TestExtension {
 	}
 	
 	
-	private static var testextension_sample_method = Lib.load ("TestExtension", "testextension_sample_method", 1);
+	private static var testextension_sample_method = Lib.load ("testextension", "testextension_sample_method", 1);
 	
 	
 }

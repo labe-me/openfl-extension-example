@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	<meta
-        title="TestExtensionTest"
+        title="TestApp"
         package="me.labe.testapp"
         version="1.0.0"
         company="Laurent Bedubourg"
