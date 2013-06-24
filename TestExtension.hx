@@ -9,10 +9,9 @@ import neko.Lib;
 
 class TestExtension {
 
+	private static var testextension_sample_method = Lib.load("testextension", "testextension_sample_method", 1);
 
-	private static var testextension_sample_method = Lib.load ("testextension", "testextension_sample_method", 1);
-
-    public static function sampleMethod (inputValue:Int):Int {
+    public static function sampleMethod(inputValue:Int) : Int {
 		return testextension_sample_method(inputValue);
     }
 

@@ -16,10 +16,12 @@
 
 	</files>
 
+    <!-- When compiling for iphone we use this -->
     <files id="iphone">
       <file name="iPhone/Tweet.mm"/>
     </files>
 
+    <!-- When compiling for mac we use that -->
     <files id="mac">
       <file name="Mac/Tweet.mm"/>
     </files>
@@ -43,15 +45,14 @@
 		<ext value=".ndll" unless="mobile"/>
 		<files id="common"/>
 
+        <!-- Compile the right files depending of current target platform -->
         <files id="mac" if="mac"/>
         <files id="iphone" if="iphone"/>
 
 	</target>
 
 	<target id="default">
-
 		<target id="NDLL"/>
-
 	</target>
 
 </xml>
