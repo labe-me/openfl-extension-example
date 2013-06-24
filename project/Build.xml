@@ -1,21 +1,29 @@
 <xml>
-	
+
 	<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
-	
+
 	<set name="mobile" value="1" if="iphone"/>
 	<set name="mobile" value="1" if="android"/>
 	<set name="mobile" value="1" if="blackberry"/>
 	<set name="mobile" value="1" if="webos"/>
-	
+
 	<files id="common">
-		
+
 		<compilerflag value="-Iinclude"/>
-		
+
 		<file name="common/ExternalInterface.cpp"/>
 		<file name="common/TestExtension.cpp"/>
-		
+
 	</files>
-	
+
+    <files id="iphone">
+      <file name="iPhone/Tweet.mm"/>
+    </files>
+
+    <files id="mac">
+      <file name="Mac/Tweet.mm"/>
+    </files>
+
 	<set name="name_prefix" value="lib" if="iphone"/>
 	<set name="IOS_ARCH" value="-v7" if="HXCPP_ARMV7"/>
 	<set name="name_extra" value=".iphoneos${IOS_ARCH}" if="iphoneos"/>
@@ -28,19 +36,22 @@
 	<set name="SLIBEXT" value=".lib" if="windows"/>
 	<set name="SLIBEXT" value=".a" unless="windows"/>
 	<set name="SLIBEXT" value=".so" if="webos"/>
-	
+
 	<target id="NDLL" output="${name_prefix}testextension${debug_extra}${name_extra}" tool="linker" toolid="${ndll-tool}">
-		
+
 		<outdir name="../ndll/${BINDIR}"/>
 		<ext value=".ndll" unless="mobile"/>
 		<files id="common"/>
-		
+
+        <files id="mac" if="mac"/>
+        <files id="iphone" if="iphone"/>
+
 	</target>
-	
+
 	<target id="default">
-		
+
 		<target id="NDLL"/>
-		
+
 	</target>
-	
+
 </xml>
