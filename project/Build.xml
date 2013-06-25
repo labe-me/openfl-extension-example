@@ -26,6 +26,11 @@
       <file name="Mac/Tweet.mm"/>
     </files>
 
+    <!-- When compiling for android we use that -->
+    <files id="android">
+      <file name="android/Tweet.cpp"/>
+    </files>
+
 	<set name="name_prefix" value="lib" if="iphone"/>
 	<set name="IOS_ARCH" value="-v7" if="HXCPP_ARMV7"/>
 	<set name="name_extra" value=".iphoneos${IOS_ARCH}" if="iphoneos"/>
@@ -48,6 +53,7 @@
         <!-- Compile the right files depending of current target platform -->
         <files id="mac" if="mac"/>
         <files id="iphone" if="iphone"/>
+        <files id="android" if="android"/>
 
 	</target>
 
